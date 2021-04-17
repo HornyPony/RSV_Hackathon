@@ -9,13 +9,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 
 import com.example.rsv_hackathon.databinding.ActivityInputSmsBinding;
 import com.example.rsv_hackathon.network.Connection;
 import com.example.rsv_hackathon.network.Service;
-import com.example.rsv_hackathon.network.model.AuthUserRequest;
 import com.example.rsv_hackathon.network.model.AuthUserResponse;
 
 import io.reactivex.Observer;
@@ -99,7 +97,7 @@ public class InputSmsActivity extends AppCompatActivity {
     }
 
     private void transitionMainActivity() {
-        Intent intent = new Intent(InputSmsActivity.this, MainActivity.class);
+        Intent intent = new Intent(InputSmsActivity.this, IntroActivity.class);
         startActivity(intent);
     }
 }

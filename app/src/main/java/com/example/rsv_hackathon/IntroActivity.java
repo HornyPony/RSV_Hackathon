@@ -5,7 +5,6 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -14,7 +13,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnBoardingAdapter.OnboardingListener {
+public class IntroActivity extends AppCompatActivity implements OnBoardingAdapter.OnboardingListener {
     private OnBoardingAdapter onBoardingAdapter;
     private LinearLayout layoutOnboardingIndicators;
     private  ViewPager2 onBoardingViewPager;
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnBoardingAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.intro_main);
 
         layoutOnboardingIndicators = findViewById(R.id.layoutOnboardingIndicators);
 
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements OnBoardingAdapter
         if (onBoardingViewPager.getCurrentItem() + 1 < onBoardingAdapter.getItemCount()){
             onBoardingViewPager.setCurrentItem(onBoardingViewPager.getCurrentItem() + 1);
         } else {
-            startActivity(new Intent(MainActivity.this, AuthorizationActivity.class));
+            startActivity(new Intent(IntroActivity.this, AuthorizationActivity.class));
             finish();
         }
     }

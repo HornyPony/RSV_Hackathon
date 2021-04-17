@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="auth_big_color">#000A64</color>
     <color name="blue">#A1D5FF</color>
+
+    <color name="bg_bubble_self">#68BFFF</color>
+    <color name="bg_bubble_lenabot">#EFEFEF</color>
 </resources>
