@@ -3,4 +3,7 @@
     <string name="text_intro_1">Брось вызов тысячам управленцев и попади в сообщество лидеров</string>
     <string name="what_s_on_your_mind">Введите сообщение</string>
     <string name="menu_refresh">Refresh</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_dev_track">Добавьте профессию, компетенции или профессиональные навыки в свой трек развития</string>
 </resources>

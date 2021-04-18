@@ -133,7 +133,7 @@ public class IntroActivity extends AppCompatActivity implements OnBoardingAdapte
         if (onBoardingViewPager.getCurrentItem() + 1 < onBoardingAdapter.getItemCount()){
             onBoardingViewPager.setCurrentItem(onBoardingViewPager.getCurrentItem() + 1);
         } else {
-            startActivity(new Intent(IntroActivity.this, AuthorizationActivity.class));
+            startActivity(new Intent(IntroActivity.this, RegistrationActivity.class));
             finish();
         }
     }

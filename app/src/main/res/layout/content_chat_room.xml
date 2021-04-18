@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFF"
+    android:background="@drawable/gradient_back"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.rsv_hackathon.ChatBot.ChatActivity"
     tools:showIn="@layout/intro_main">
@@ -30,7 +30,7 @@
         android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:background="#68BFFF"
+        android:background="#B6E1FF"
         android:orientation="horizontal"
         android:weightSum="4">
 

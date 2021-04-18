@@ -12,4 +12,6 @@
 
     <color name="bg_bubble_self">#68BFFF</color>
     <color name="bg_bubble_lenabot">#EFEFEF</color>
+    <color name="dark_blue">#000A64</color>
+    <color name="gray">#C7C7C7</color>
 </resources>

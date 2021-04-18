@@ -68,6 +68,7 @@ public class ChatActivity extends AppCompatActivity {
   private MicrophoneInputStream capture;
   private Context mContext;
   private MicrophoneHelper microphoneHelper;
+  private int number = 0;
 
   private Assistant watsonAssistant;
   private Response<SessionResponse> watsonAssistantSession;
@@ -111,6 +112,7 @@ public class ChatActivity extends AppCompatActivity {
     recyclerView.setAdapter(mAdapter);
     this.inputMessage.setText("");
     this.initialRequest = true;
+
 
 
     int permission = ContextCompat.checkSelfPermission(this,
@@ -157,6 +159,14 @@ public class ChatActivity extends AppCompatActivity {
         });*/
 
         createServices();
+
+      Message inputMessage = new Message();
+      inputMessage.setMessage("Привет! Я твой помощник,\n" +
+              "матрёшка Лена. Хочешь \n" +
+              "расскажу кое-что?");
+      inputMessage.setId("2");
+      messageArrayList.add(inputMessage);
+
         sendMessage();
     };
 
@@ -204,10 +214,20 @@ public class ChatActivity extends AppCompatActivity {
 
                         final String inputmessage = this.inputMessage.getText().toString().trim();
                         if (!this.initialRequest) {
-                            Message inputMessage = new Message();
-                            inputMessage.setMessage(inputmessage);
-                            inputMessage.setId("1");
-                            messageArrayList.add(inputMessage);
+                                Message inputMessage = new Message();
+                                inputMessage.setMessage(inputmessage);
+                                inputMessage.setId("1");
+                                number++;
+                                messageArrayList.add(inputMessage);
+
+                                Message inputMessage2 = new Message();
+                                inputMessage2.setMessage("Извините! На платформе\n" +
+                                        "ведутся технические работы\n" +
+                                        "Скоро вернёмся!");
+                                inputMessage2.setId("2");
+                                messageArrayList.add(inputMessage2);
+
+
                         } else {
                             Message inputMessage = new Message();
                             inputMessage.setMessage(inputmessage);

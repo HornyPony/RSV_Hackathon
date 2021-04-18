@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
+import com.example.rsv_hackathon.Profile.MainProfileActivity;
 import com.example.rsv_hackathon.databinding.ActivityInputSmsBinding;
 import com.example.rsv_hackathon.network.Connection;
 import com.example.rsv_hackathon.network.Service;
@@ -37,40 +38,17 @@ public class InputSmsActivity extends AppCompatActivity {
         service = Connection.getInstance().getService();
         sharedPreferences = getSharedPreferences("shared", MODE_PRIVATE);
 
+
+        String string1 = "Введите код подтверждения из SMS-сообщения, отправленного на номер "
+                + sharedPreferences.getString("number", "");
+        binding.textView2.setText(string1);
+
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isCorrectData()) {
 
-                    service.signEmail(null)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new Observer<AuthUserResponse>() {
-                                @Override
-                                public void onSubscribe(@androidx.annotation.NonNull Disposable d) {
+                    transitionMainActivity();
 
-                                }
-
-                                @Override
-                                public void onNext(@androidx.annotation.NonNull AuthUserResponse authUserResponse) {
-                                    if(authUserResponse.getStatus().equals("success")) {
-                                        transitionMainActivity();
-                                    }
-                                }
-
-                                @Override
-                                public void onError(@NonNull Throwable e) {
-
-                                }
-
-                                @Override
-                                public void onComplete() {
-
-                                }
-                            });
-
-
-                }
             }
         });
 
@@ -97,7 +75,7 @@ public class InputSmsActivity extends AppCompatActivity {
     }
 
     private void transitionMainActivity() {
-        Intent intent = new Intent(InputSmsActivity.this, IntroActivity.class);
+        Intent intent = new Intent(InputSmsActivity.this, MainProfileActivity.class);
         startActivity(intent);
     }
 }
